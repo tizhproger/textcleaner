@@ -1,13 +1,14 @@
 # Textcleaner
 
-A lightweight multilingual (currently EN and RU languages supported) text cleaning utility for NLP tasks. Supports tokenization, normalization, emoji and noise removal.
+A lightweight multilingual (currently EN and RU languages supported) text cleaning utility for NLP tasks. Supports tagging, normalization, emoji and noise removal.
 
 ## Features
 
 - Emoji & symbol removal
 - Special character normalization
 - Language-specific date detection (ru/en)
-- Replacement of URLs, emails, phones, etc. with `[TOKEN]`
+- Replacement of URLs, emails, phones, etc. with `[TAG]`
+- Replacement of noise characters (unprintables, leftover spaces etc.)
 
 ## Usage
 
