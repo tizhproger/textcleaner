@@ -11,6 +11,37 @@ A lightweight multilingual (currently EN and RU languages supported) text cleani
 - Replacement of noise characters (unprintables, leftover spaces etc.)
 - Removing: repeated strings, strings with only digits, symbols only, tags only
 
+## Parameters
+
+The TextCleaner class supports flexible configuration:
+
+```python
+TextCleaner(
+    preserve_tokens=True,
+    strip_only_tokens=True,
+    language='multi',
+    strict=False,
+    min_length=5
+)
+```
+
+Parameter description:
+
+- `preserve_tokens` (bool, default True)
+Enables entity tagging such as `[LINK]`, `[EMAIL]`, `[DATE]`.
+
+- `strip_only_tokens` (bool, default True)
+If the cleaned message consists only of tokens (e.g., `[LINK]` `[EMAIL]`), it will be discarded.
+
+- `language` (str, default 'multi')
+Language of the text ('ru', 'en', 'multi'), affects date recognition.
+
+- `strict` (bool, default False)
+Enables stricter cleaning (removes texts with no letters, only numbers, repeating symbols, etc.).
+
+- `min_length` (int, default 5)
+Minimum allowed length of the cleaned message.
+
 ## Usage
 
 ```python
