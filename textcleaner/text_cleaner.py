@@ -68,7 +68,8 @@ class TextCleaner:
             "\U0001F900-\U0001F9FF"
             "\U0001FA00-\U0001FAFF"
             "\U0001FA70-\U0001FAFF"
-            "\u200d\uFE0F"]+",
+            "\u200d\uFE0F"
+            "]+",
             flags=re.UNICODE
         )
         text = emoji_pattern.sub('', text)
