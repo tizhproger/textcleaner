@@ -16,4 +16,4 @@ def test_cleaner(text, expected):
     if expected is None:
         assert result is None
     else:
-        assert expected in result
+        assert expected == result
