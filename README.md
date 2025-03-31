@@ -9,6 +9,7 @@ A lightweight multilingual (currently EN and RU languages supported) text cleani
 - Language-specific date detection (ru/en)
 - Replacement of URLs, emails, phones, etc. with `[TAG]`
 - Replacement of noise characters (unprintables, leftover spaces etc.)
+- Removing: repeated strings, strings with only digits, symbols only, tags only
 
 ## Usage
 
