@@ -11,7 +11,7 @@ from textcleaner import TextCleaner
     ("Just a link: https://example.com", "Just a link: [LINK]"),
 ])
 def test_cleaner(text, expected):
-    cleaner = TextCleaner(strict=True, min_length=5)
+    cleaner = TextCleaner(strict=True, min_length=5, strip_only_tokens=False)
     result = cleaner.clean(text)
     if expected is None:
         assert result is None
