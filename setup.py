@@ -7,7 +7,7 @@ setup(
     version=__version__,
     description='Multilingual text cleaner with emoji removal, normalization and token tagging',
     author='tizhproger',
-    author_email='you@example.com',
+    author_email='tizhproger.development@gmail.com',
     packages=find_packages(),
     python_requires='>=3.7',
     classifiers=[
