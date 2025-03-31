@@ -34,7 +34,7 @@ Enables entity tagging such as `[LINK]`, `[EMAIL]`, `[DATE]`.
 If the cleaned message consists only of tokens (e.g., `[LINK]` `[EMAIL]`), it will be discarded.
 
 - `language` (**str**, default **'multi'**)
-Language of the text ('ru', 'en', 'multi'), affects date recognition.
+Language of the text (**'ru'**, **'en'**, **'multi'**), affects date recognition.
 
 - `strict` (**bool**, default **False**)
 Enables stricter cleaning (removes texts with no letters, only numbers, repeating symbols, etc.).
