@@ -6,7 +6,7 @@ A lightweight multilingual (currently EN and RU languages supported) text cleani
 
 - Emoji & symbol removal
 - Special character normalization
-- Language-specific date detection (ru/en)
+- Language-specific date detection (RU/EN)
 - Replacement of URLs, emails, phones, etc. with `[TAG]`
 - Replacement of noise characters (unprintables, leftover spaces etc.)
 - Removing: repeated strings, strings with only digits, symbols only, tags only
