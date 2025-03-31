@@ -53,7 +53,7 @@ print(cleaned)
 # Output: 'Text with link: [LINK] and email: [EMAIL]'
 ```
 
-If given the text doesn't meet the required criteria of filtering, method will return `None`
+If the given text doesn't meet the required criteria of filtering, method will return `None`
 
 
 ## Configuration
