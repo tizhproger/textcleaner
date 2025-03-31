@@ -27,19 +27,19 @@ TextCleaner(
 
 Parameter description:
 
-- `preserve_tokens` (bool, default True)
+- `preserve_tokens` (**bool**, default **True**)
 Enables entity tagging such as `[LINK]`, `[EMAIL]`, `[DATE]`.
 
-- `strip_only_tokens` (bool, default True)
+- `strip_only_tokens` (**bool**, default **True**)
 If the cleaned message consists only of tokens (e.g., `[LINK]` `[EMAIL]`), it will be discarded.
 
-- `language` (str, default 'multi')
+- `language` (**str**, default **'multi'**)
 Language of the text ('ru', 'en', 'multi'), affects date recognition.
 
-- `strict` (bool, default False)
+- `strict` (**bool**, default **False**)
 Enables stricter cleaning (removes texts with no letters, only numbers, repeating symbols, etc.).
 
-- `min_length` (int, default 5)
+- `min_length` (**int**, default **5**)
 Minimum allowed length of the cleaned message.
 
 ## Usage
