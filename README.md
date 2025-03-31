@@ -1,6 +1,6 @@
-# textcleaner
+# Textcleaner
 
-A lightweight multilingual text cleaning utility for NLP tasks. Supports tokenization, normalization, emoji and noise removal.
+A lightweight multilingual (currently EN and RU languages supported) text cleaning utility for NLP tasks. Supports tokenization, normalization, emoji and noise removal.
 
 ## Features
 
@@ -15,7 +15,7 @@ A lightweight multilingual text cleaning utility for NLP tasks. Supports tokeniz
 from textcleaner import TextCleaner
 
 cleaner = TextCleaner(language='multi', preserve_tokens=True)
-cleaned = cleaner.clean("Text with link: https://example.com and email: me@mail.ru")
+cleaned = cleaner.clean("Text with link: https://example.com and email: me@gmail.com")
 print(cleaned)
 # Output: 'Text with link: [LINK] and email: [EMAIL]'
 ```
@@ -30,5 +30,6 @@ from textcleaner import TextCleaner
 
 cleaner = TextCleaner(strict=True, min_length=8)
 text = cleaner.clean("Some raw input message with a link: https://test.com")
-print(text)  # Output: Some raw input message with a link: [LINK]
+print(text)
+# Output: Some raw input message with a link: [LINK]
 ```
