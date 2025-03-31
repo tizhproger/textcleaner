@@ -5,12 +5,16 @@ from typing import Optional
 
 class TextCleaner:
     def __init__(self,
+                 strict: bool = False,
+                 min_length: int = 5,
                  preserve_tokens: bool = True,
                  strip_only_tokens: bool = True,
                  language: str = "multi"):
         self.preserve_tokens = preserve_tokens
         self.strip_only_tokens = strip_only_tokens
         self.language = language.lower()
+        self.strict = strict
+        self.min_length = min_length
 
         # Специальные символы для замены
         self.special_replace = {
@@ -64,8 +68,7 @@ class TextCleaner:
             "\U0001F900-\U0001F9FF"
             "\U0001FA00-\U0001FAFF"
             "\U0001FA70-\U0001FAFF"
-            "\u200d\uFE0F"
-            "]+",
+            "\u200d\uFE0F"]+",
             flags=re.UNICODE
         )
         text = emoji_pattern.sub('', text)
@@ -86,6 +89,24 @@ class TextCleaner:
 
         # Удаление строк, содержащих только токены
         if self.strip_only_tokens and all(re.fullmatch(r'\[[A-Z_]+\]', w) for w in text.split()):
+            return None
+
+        
+        if self.strict:
+            # Удаление строк без букв
+            if not re.search(r'[a-zA-Zа-яА-Я]', text):
+                return None
+
+            # Удаление строк из одного повторяющегося символа
+            if len(set(text)) == 1 and len(text) > 3:
+                return None
+
+            # Удаление строк, состоящих только из цифр
+            if re.fullmatch(r'\d+', text):
+                return None
+
+        # Удаление слишком коротких строк
+        if len(text) < self.min_length:
             return None
 
         return text
